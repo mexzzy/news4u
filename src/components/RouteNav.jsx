@@ -5,7 +5,8 @@ import Weather from "./Weather";
 import { useState } from "react";
 
 function RouteNav() {
-  const [politicsLink, setPoliticsLink] = useState(true);
+  const [generalLink, setGeneralLink] = useState(true);
+  const [politicsLink, setPoliticsLink] = useState(false);
   const [wordLink, setWordLink] = useState(false);
   const [economyLink, setEconomyLink] = useState(false);
   const [scienceLink, setScienceLink] = useState(false);
@@ -16,7 +17,22 @@ function RouteNav() {
   const [foodLink, setFoodLink] = useState(false);
   const [sportLink, setSportLink] = useState(false);
 
+  const general = () => {
+    setGeneralLink(true);
+    setPoliticsLink(false);
+    setWordLink(false);
+    setEconomyLink(false);
+    setScienceLink(false);
+    setBusinessLink(false);
+    setTravelLink(false);
+    setClimateLink(false);
+    setLifestyleLink(false);
+    setFoodLink(false);
+    setSportLink(false);
+  };
   const politics = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(true);
     setWordLink(false);
     setEconomyLink(false);
@@ -29,6 +45,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const world = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(true);
     setEconomyLink(false);
@@ -41,6 +59,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const economy = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(true);
@@ -53,6 +73,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const science = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -65,6 +87,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const business = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -77,6 +101,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const travel = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -89,6 +115,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const climate = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -101,6 +129,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const lifestyle = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -113,6 +143,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const food = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -125,6 +157,8 @@ function RouteNav() {
     setSportLink(false);
   };
   const sport = () => {
+    setGeneralLink(false);
+
     setPoliticsLink(false);
     setWordLink(false);
     setEconomyLink(false);
@@ -140,9 +174,16 @@ function RouteNav() {
     <RouteContainer>
       <RouteWrapper>
         <Link
+          onClick={general}
+          className={`link ${generalLink && "activeLink"}`}
+          to="/"
+        >
+          <Anchors>general</Anchors>
+        </Link>
+        <Link
           onClick={politics}
           className={`link ${politicsLink && "activeLink"}`}
-          to="/"
+          to="/politics"
         >
           <Anchors>politics</Anchors>
         </Link>

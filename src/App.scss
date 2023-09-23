@@ -1,0 +1,45 @@
+.newsFlexBox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.red {
+  width: 300px;
+
+  p {
+    padding: 10px;
+    background-color: #cb8787ab;
+    width: fit-content;
+  }
+  div {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+    span {
+      color: #fff;
+      padding: 10px;
+      font-weight: 700;
+    }
+  }
+  .queryDescription {
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  .queryAnchor {
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px 10px;
+    justify-content: flex-end;
+    a {
+      color: rgb(37, 79, 218);
+    }
+  }
+}

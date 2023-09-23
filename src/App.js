@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import './App.scss';
 import Nav from "./components/Nav";
 import { MainContainer, MainRouteContainer, MainWrapper } from "./components/Style";
+import General from "./pages/General";
 import Politics from "./pages/Politics";
 import World from "./pages/World";
 import Economy from "./pages/Economy";
@@ -16,6 +18,7 @@ import RouteNav from "./components/RouteNav";
 import Footer from "./components/Footer";
 
 function App() {
+ 
   return (
     <div>
       <MainContainer>
@@ -24,7 +27,8 @@ function App() {
           <RouteNav />
           <MainRouteContainer>
             <Routes>
-              <Route path="/" element={<Politics />} />
+              <Route path="/" element={<General />} />
+              <Route path="/politics" element={<Politics />} />
               <Route path="/world" element={<World />} />
               <Route path="/economy" element={<Economy />} />
               <Route path="/scienceAndTech" element={<ScienceNdTech />} />
@@ -37,8 +41,8 @@ function App() {
             </Routes>
           </MainRouteContainer>
         </MainWrapper>
-        <Footer/>
       </MainContainer>
+        <Footer/>
     </div>
   );
 }

@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
-  background: #000000;
+  background-image: linear-gradient(#000 300px, #fff 300px);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  flex-direction: column;
+  /* height: 70vh; */
 `;
 
 export const MainWrapper = styled.div`
   background: #fff;
-  position: absolute;
-  top: 0;
+  /* position: absolute;
+  top: 0; */
   width: 80%;
   @media (max-width: 768px) {
     width: 100%;
@@ -89,6 +90,11 @@ export const WeatherContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  div:nth-child(2) {
+    display: flex;
+    gap: 3px;
+    align-items: baseline;
+  }
   @media (max-width: 768px) {
     border-left: 2px solid #ffffff9b;
   }
@@ -101,21 +107,136 @@ export const MainRouteContainer = styled.div`
 `;
 export const FooterWrapper = styled.div`
   color: #fff;
-  border: 1px solid red;
-  width: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 3% 7%;
+  background-color: #000;
+  padding: 3% 5%;
   align-items: flex-start;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
-export const FooterBox1 = styled.div``;
-export const FooterBox2 = styled.div``;
-// export const RouteWrapper = styled.div`
+export const FooterBox1 = styled.div`
+  display: flex;
+  gap: 10px;
+  color: #999;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  div:nth-child(1) {
+    text-transform: capitalize;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: start;
+    }
+  }
+  div:nth-child(2) {
+    font-size: 12px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+export const FooterBox2 = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: #000;
+  text-transform: capitalize;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  div:nth-child(3) {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+    gap: 10px;
+    flex-direction: column;
+  }
+`;
+export const FirstNewsBx1 = styled.div`
+  width: 50%;
 
-// `
-// export const RouteWrapper = styled.div`
+  @media (max-width: 600px){
+    width: auto;
+  }
+  div:nth-child(1) {
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 0;
+      padding: 10px;
+      left: 0;
+      background-image: linear-gradient(transparent, #00000099 30%);
+      p:nth-child(1) {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+      }
+      p:nth-child(2) {
+        color: #999;
+        font-size: 12px;
+      }
+    }
+  }
+  div:nth-child(2) {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    /* margin-top: 10px; */
 
-// `
+    div:nth-child(1) {
+      width: 80%;
+
+      p:nth-child(1) {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      p:nth-child(2) {
+        font-size: 12px;
+        cursor: pointer;
+        color: #04594d;
+      }
+    }
+    div:nth-child(2) {
+      border: 1px solid #999;
+      width: 20%;
+    }
+  }
+`;
+export const FirstNewsBx2 = styled.div`
+  width: 50%;
+  background: #1a1a1a;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  flex-direction: column;
+  @media (max-width: 600px){
+    width: auto;
+    padding: 10px;
+
+  }
+`;
+export const MainNewsWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  @media (max-width: 600px){
+    flex-direction: column;
+  }
+`;
 // export const RouteWrapper = styled.div`
 
 // `

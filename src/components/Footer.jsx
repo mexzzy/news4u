@@ -8,12 +8,18 @@ function Footer() {
     <FooterWrapper>
       <Logo />
       <FooterBox1>
+        <div>
+
         <span>privacy policy</span>
         <span>Terms of service</span>
         <span>copyright policy</span>
         <span>data policy</span>
         <span>accessibility</span>
         <span>help</span>
+        </div>
+        <div>
+        © 2023 News4u, All rights reserved
+        </div>
       </FooterBox1>
       <FooterBox2>
         <div>
@@ -49,6 +55,9 @@ function Footer() {
           <Link to="/sport" className="link">
             sport
           </Link>
+        </div>
+        <div style={{textAlgn: "center", color: "#999"}}>
+        © 2023 News4u, All rights reserved
         </div>
       </FooterBox2>
     </FooterWrapper>
