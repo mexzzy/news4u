@@ -43,6 +43,7 @@ export const SearchWrapper = styled.div`
     outline: none;
     color: #fff;
     width: 100%;
+    font-size: 16px;
     &::placeholder {
       color: #fff;
     }
@@ -167,11 +168,8 @@ export const FooterBox2 = styled.div`
   }
 `;
 export const FirstNewsBx1 = styled.div`
-  width: 50%;
+  width: auto;
 
-  @media (max-width: 600px){
-    width: auto;
-  }
   div:nth-child(1) {
     position: relative;
     span {
@@ -191,30 +189,6 @@ export const FirstNewsBx1 = styled.div`
       }
     }
   }
-  div:nth-child(2) {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    /* margin-top: 10px; */
-
-    div:nth-child(1) {
-      width: 80%;
-
-      p:nth-child(1) {
-        font-size: 16px;
-        font-weight: bold;
-      }
-      p:nth-child(2) {
-        font-size: 12px;
-        cursor: pointer;
-        color: #04594d;
-      }
-    }
-    div:nth-child(2) {
-      border: 1px solid #999;
-      width: 20%;
-    }
-  }
 `;
 export const FirstNewsBx2 = styled.div`
   width: 50%;
@@ -223,56 +197,16 @@ export const FirstNewsBx2 = styled.div`
   padding: 10px;
   gap: 10px;
   flex-direction: column;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     width: auto;
     padding: 10px;
-
   }
 `;
 export const MainNewsWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
-// export const RouteWrapper = styled.div`
-
-// `
