@@ -10,6 +10,8 @@ function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_TOKEN = process.env.REACT_APP_API_KEY_3;
+
 
   useEffect(() => {
     const userLocalTime = new Date();
@@ -17,36 +19,36 @@ function Weather() {
   }, []);
 
   useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+    axios.get("https://ipinfo.io/json", {
+      params: {
+        token: API_TOKEN,
+      },
+    }).then((ipResponse) => {
+      const { loc } = ipResponse.data;
 
-        const API_KEY = process.env.REACT_APP_API_KEY_1;
-        const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather`;
+      const [latitude, longitude] = loc.split(",");
 
-        axios
-          .get(WEATHER_API_URL, {
-            params: {
-              lat: latitude,
-              lon: longitude,
-              appid: API_KEY,
-              units: "metric",
-            },
-          })
-          .then((response) => {
-            setWeatherData(response.data);
-            setLoading(false);
-          })
-          .catch((error) => {
-            setError(error);
-            setLoading(false);
-          });
-      });
-    } else {
-      setError("Geolocation is not available in this browser.");
-      setLoading(false);
-    }
+      const API_KEY = process.env.REACT_APP_API_KEY_1;
+      const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather";
+
+      axios
+        .get(WEATHER_API_URL, {
+          params: {
+            lat: latitude,
+            lon: longitude,
+            appid: API_KEY,
+            units: "metric",
+          },
+        })
+        .then((response) => {
+          setWeatherData(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError(error);
+          setLoading(false);
+        });
+    });
   }, []);
 
   if (loading) {
@@ -57,7 +59,7 @@ function Weather() {
           width="30"
           color="#04594d"
           radius="3"
-          wrapperStyle={{padding : "10px"}}
+          wrapperStyle={{ padding: "10px" }}
           visible={true}
         />
       </div>
