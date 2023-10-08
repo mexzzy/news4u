@@ -58,7 +58,6 @@ function World() {
       ) : (
         <MainNewsWrapper>
           <IsLoadingpage>
-           
             <div className="newsFlexBox">
               {isLoading ? (
                 <>
@@ -91,30 +90,40 @@ function World() {
                 </>
               ) : (
                 <div className="newsFlexBox">
-                  {newsData.map((index) => (
-                    <div key={index.id} className="red">
-                      <p>
-                        {index.publishedAt.slice(0, 10)} |{" "}
-                        {index.publishedAt.slice(11, 16)}
-                      </p>
-                      <div>
-                        {index.urlToImage ? (
-                          <img src={index.urlToImage} alt={index.title} />
-                        ) : (
-                          <>
-                            <div className="imageUndefined">
-                              <img src={logo} alt="logo" />
-                            </div>
-                          </>
-                        )}
-                        <span>{index.title}</span>
-                      </div>
-                      <div className="queryDescription">{index.content}</div>
-                      <div className="queryAnchor">
-                        <a href={index.url}>Read More</a>
-                      </div>
-                    </div>
-                  ))}
+                  {newsData && newsData.length > 0 ? (
+                    <>
+                      {newsData.map((index) => (
+                        <div key={index.id} className="red">
+                          <p>
+                            {index.publishedAt.slice(0, 10)} |{" "}
+                            {index.publishedAt.slice(11, 16)}
+                          </p>
+                          <div>
+                            {index.urlToImage ? (
+                              <img src={index.urlToImage} alt={index.title} />
+                            ) : (
+                              <>
+                                <div className="imageUndefined">
+                                  <img src={logo} alt="logo" />
+                                </div>
+                              </>
+                            )}
+                            <span>{index.title}</span>
+                          </div>
+                          <div className="queryDescription">
+                            {index.content}
+                          </div>
+                          <div className="queryAnchor">
+                            <a href={index.url}>Read More</a>
+                          </div>
+                        </div>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      <p>No News</p>
+                    </>
+                  )}
                 </div>
               )}
             </div>
